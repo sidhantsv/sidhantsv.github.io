@@ -84,32 +84,26 @@
                                         <br>
 
                                         <span class="image center"><a href="images/nicu_diag.png" class="image"><img src="images/nicu_diag.png" alt="" /></a></span>
-                                        <span class="image center"><a href="images/nicu_flow.png" class="image"><img src="images/nicu_flow.png" alt="" /></a></span>
                                         
                                         <br>
                                         <br>
                                         <br>
 
-                                        <p>A fairly straightforward hardware-software diagram, and operations flowcharts are given to better understand the system here. The main components of the system are the photosensitive light sensor, the water pump, a DHT11 temperature and humidity sensor, a red warning LED, a buzzer, and an OLED screen.</p>
+                                        <p>A fairly straightforward hardware-software diagram is attached to better understand the system here. The main components of the system are the photosensitive light sensor, the water pump, a DHT11 temperature and humidity sensor, a red warning LED, a buzzer, and an OLED screen.</p>
+
+                                        <span class="image center"><a href="images/nicu_flow.png" class="image"><img width="1181" height="461" src="images/nicu_flow.png" alt="" /></a></span>
 
                                         <br>
                                         <br>
                                         <br>
-                                        <br>
-                                        <br>
-                                        <br>
 
-                                        <p><article class="image right"><a href="images/plantmanualflow.PNG" class="image"><img src="images/plantmanualflow.PNG" alt="" /></a></article> Additionally, the manual part of the system is explained in the simple flowchart here as well. Once again, simply, when the button to turn the pump on is pressed, the pump turns on, while when the button is not pressed, the pump turns off. Like with the automated side, when the pump is in operation, a LED light on the Arduino Groveboard lights up to signal the pump is in operation.</p>
+                                        <p>A operations flowchart here shows the operation of the system in diagram form. Notice that there are three branches from the start function, as each condition is checked independently, as opposed to in series. This is important, as there are multiple factors to keep in check in a NICU. An explanation of all the components is given below:</p>
 
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
+                                        <p>Starting with the temperature sensor, if the value falls below 23.0C, which is a fair compromise for the minimum temperature of 22.0C needed in a Level I NICU, The buzzer buzzes in a tone with a period of 0.5s. Simultaneously, the LED flashes with a period of 0.5s, alerting the user that the minimum temperature variable is being breached. On especially warm days, SIDS has a higher probability of occurring in the child. To prevent any chance of SIDS occurring, the LED and Buzzer turn on with a period of 0.5s when the temperature exceeds 25.0C. Heat can be provided using an incandescent light bulb, where a heater is not available, especially when the cold weather sets in.</p>
 
-                                        <p><article class="image left"><a href="images/plantdiag.png" class="image"><img src="images/plantdiag.png" alt="" /></a></article> This project taught me basics of coding in Arduino and Java, as well as how to tinker with a Groveboard (Arduino board), how to integrate software and hardware to produce something that has usability in the real world. A more complex diagram of the overall system is provided as well. </p>
+                                        <p>Along the same lines, a Level I NICU requires a minimum relative humidity to be maintained, which varies with age. [5] The humidity value corresponding with the age can easily be changed by simply editing the age variable to suit the requirements. Unfortunately, a lot of hospitals in rural India lack proper Level 1 NICU facilities, including proper humidifying equipment. In such extreme cases, a simple way of humidifying the environment is by heating water in a container, thus increasing the relative humidity of the environment. A pump, which is connected to the Grove MOSFET, and 8V batteries, will begin pumping water from a reservoir into the tub close to the baby's environment. This water then can be heated two ways, by directly heating under a stove, or by using a lightbulb's heat energy to warm the water. Thus, if the humidity levels fall below acceptable limits, the pump  will automatically pump water into the tub near the baby, which will then be heated to increase the relative humidity until it goes over the minimum threshold. Unfortunately, due to the project's constraints, a 230V bulb was independently connected, and not via a MOSFET/Arduino system, and so will need to be turned on manually. Likewise, a LPG stove was not used as it could become dangerous to test with flammable material around the test area.</p>
 
+                                        <p>The final piece of the puzzle is connected to the last one. A lot of times, babies will feel colder at night fast, especially when adequate warmth is not provided. The cold can very quickly lead to death, even quicker than the response times of some of the temperature and humidity sensors. During these times, a failure in the light bulb can be potentially fatal and catastrophic. To add a backup alert system, the photosensitive light sensor, which can detect the trend of the intensity of light, will trigger the LED flash and Buzzer, both with a period of 0.5s. This triggers if the luminosity trend falls below 450 units, but can be calibrated and adjusted according to the environment.</p>
 
 							</section>
 
