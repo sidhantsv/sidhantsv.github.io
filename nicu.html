@@ -91,7 +91,7 @@
 
                                         <p>A fairly straightforward hardware-software diagram is attached to better understand the system here. The main components of the system are the photosensitive light sensor, the water pump, a DHT11 temperature and humidity sensor, a red warning LED, a buzzer, and an OLED screen.</p>
 
-                                        <span class="image center"><a href="images/nicu_flow.png" class="image"><img width="1181" height="461" src="images/nicu_flow.png" alt="" /></a></span>
+                                        <span class="image center"><a href="images/nicu_flow.png" class="image"><img src="images/nicu_flow.png" alt="" /></a></span>
 
                                         <br>
                                         <br>
@@ -101,10 +101,32 @@
 
                                         <p>Starting with the temperature sensor, if the value falls below 23.0C, which is a fair compromise for the minimum temperature of 22.0C needed in a Level I NICU, The buzzer buzzes in a tone with a period of 0.5s. Simultaneously, the LED flashes with a period of 0.5s, alerting the user that the minimum temperature variable is being breached. On especially warm days, SIDS has a higher probability of occurring in the child. To prevent any chance of SIDS occurring, the LED and Buzzer turn on with a period of 0.5s when the temperature exceeds 25.0C. Heat can be provided using an incandescent light bulb, where a heater is not available, especially when the cold weather sets in.</p>
 
-                                        <p>Along the same lines, a Level I NICU requires a minimum relative humidity to be maintained, which varies with age. [5] The humidity value corresponding with the age can easily be changed by simply editing the age variable to suit the requirements. Unfortunately, a lot of hospitals in rural India lack proper Level 1 NICU facilities, including proper humidifying equipment. In such extreme cases, a simple way of humidifying the environment is by heating water in a container, thus increasing the relative humidity of the environment. A pump, which is connected to the Grove MOSFET, and 8V batteries, will begin pumping water from a reservoir into the tub close to the baby's environment. This water then can be heated two ways, by directly heating under a stove, or by using a lightbulb's heat energy to warm the water. Thus, if the humidity levels fall below acceptable limits, the pump  will automatically pump water into the tub near the baby, which will then be heated to increase the relative humidity until it goes over the minimum threshold. Unfortunately, due to the project's constraints, a 230V bulb was independently connected, and not via a MOSFET/Arduino system, and so will need to be turned on manually. Likewise, a LPG stove was not used as it could become dangerous to test with flammable material around the test area.</p>
+                                        <p>Along the same lines, a Level I NICU requires a minimum relative humidity to be maintained, which varies with age. The humidity value corresponding with the age can easily be changed by simply editing the age variable to suit the requirements. Unfortunately, a lot of hospitals in rural India lack proper Level 1 NICU facilities, including proper humidifying equipment. In such extreme cases, a simple way of humidifying the environment is by heating water in a container, thus increasing the relative humidity of the environment. A pump, which is connected to the Grove MOSFET, and 8V batteries, will begin pumping water from a reservoir into the tub close to the baby's environment. This water then can be heated two ways, by directly heating under a stove, or by using a lightbulb's heat energy to warm the water. Thus, if the humidity levels fall below acceptable limits, the pump  will automatically pump water into the tub near the baby, which will then be heated to increase the relative humidity until it goes over the minimum threshold. Unfortunately, due to the project's constraints, a 230V bulb was independently connected, and not via a MOSFET/Arduino system, and so will need to be turned on manually. Likewise, a LPG stove was not used as it could become dangerous to test with flammable material around the test area.</p>
 
                                         <p>The final piece of the puzzle is connected to the last one. A lot of times, babies will feel colder at night fast, especially when adequate warmth is not provided. The cold can very quickly lead to death, even quicker than the response times of some of the temperature and humidity sensors. During these times, a failure in the light bulb can be potentially fatal and catastrophic. To add a backup alert system, the photosensitive light sensor, which can detect the trend of the intensity of light, will trigger the LED flash and Buzzer, both with a period of 0.5s. This triggers if the luminosity trend falls below 450 units, but can be calibrated and adjusted according to the environment.</p>
+							</section>
 
+                            <section id="three">
+								<div class="inner">
+									<h2 id="content" class="icon solid fa-bulb">&nbsp&nbspIdeation and Testing</h2>
+
+										<p><article class="image right"><a href="images/TempGraf.PNG" class="image"><img src="images/TempGraf.PNG" alt="" /></a></article>The first step in this process involved thinking up the original idea, and this part took up the most time. I remember reading an article about the poor conditions of hospitals in rural areas and thought emulating the basics of a Level I NICU could yield interesting results. Although, I feel I have not remotely achieved the goal I set out to achieve, I think I'm pretty proud of the implementation so far. Once I had the idea, I tried coding it in MATLAB, before failing pretty spectacularly. I finally decided to use C/C++ (Arduino IDE) to code, since I needed the OLED display to work. The learning curve was quite steep at first, but I got the hang of it soon, and I think I did decently, if I'm being honest with myself. I did reference the SEEED Wiki to find out how to code specific parts, and that was a lifesaver.</p>
+
+									    <p>Testing the system was pretty easy using the plot functions to check for trends and limits. Each section was independently tested, while keeping the other sections as control. This is much better explained in the video with live demos. The testing for the temperature and its sensitivity was done, and yielded the results in the image above. As you can see, the sensor is sensitive to temperature differences of about 0.5c. This is why the minimum value was rounded up significantly.</p>
+
+                                        <p><article class="image left"><a href="images/HumiGraf.PNG" class="image"><img src="images/HumiGraf.PNG" alt="" /></a></article>Likewise, the humidity sensor was tested and yielded the following results after you bring boiling water close to the sensor, then increase the distance between them slowly. </p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <p><article class="image right"><a href="images/ldrGraf.PNG" class="image"><img src="images/ldrGraf.PNG" alt="" /></a></article>Finally, the photosensitive sensor was checked. The graph illustrates what happens when an incandescent bulb is slowly brought closer to the sensor, kept there for a couple seconds, then pulled away from the sensor. It is easy to spot that the maximum value for the sensor tops out at 750 units. A value of 450 units gives good balance, but as mentioned above, can be changed to suit the environment. </p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+           
 							</section>
 
                             <br>
