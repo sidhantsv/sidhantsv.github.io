@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sidhant Vaidya</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="/webassets/thumbs.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Sidhant</strong> <span>Vaidya</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
+							<li><a href="engineeringprojects.html">Engineering Projects</a></li>
+							<li><a href="jobs.html">Job Experience</a></li>
+							<li><a href="hobbies.html">Hobbies</a></li>
+							<li><a href="education.html">Education</a></li>
+							<li><a href="airports.html">Passion Projects</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#contact" class="button next scrolly">Contact</a></li>
+						</ul>
+					</nav>
+
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/nikku.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Mockup of a Level I NICU</h1>
+							</header>
+							<div class="content">
+								<p>A deeper dive into sensing and programming.</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<p>A much more advanced Arduino project that incorporated more sensors and more advanced programming to attempt to solve a real world problem plauging rural areas of the world.</p>
+                                </div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="inner">
+									<h2 id="content" class="icon solid fa-tree">&nbsp&nbspAbout the project</h2>
+
+										<p><article class="image right"><a href="images/setup.png" class="image"><img src="images/setup.png" alt="" /></a></article>This project used a moisture sensor provided with a SEEED Groveboard Kit, a MOSFET and Pump set to automate the process of watering a plant. The hardware utilized parts of Arduino IDE's code and Java to run. The setup sensed the environment and responded with a specific set of actions when conditions were met. The "M" value refers to the Moisture Sensor value.</p>
+
+									    <p>The primary goal of this system was to water a plant when the soil reaches a specific threshold of moisture. To do this, there were two ways: manual and automatic, and the project uses both methods to effectively water the plant.</p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <p><article class="image left"><a href="images/plantautoflow.PNG" class="image"><img src="images/plantautoflow.PNG" alt="" /></a></article> The automatic part of the system is explained in the simple flowchart here. Simply, when the detected sensorValue exceeds or matches a preset thresholdValue, the pump automatically turns on. Once the soil moisture stabilizes and exceeds the thresholdValue the pump turns off. When the pump turns on, an LED light on the Arduino Groveboard also lights up to signal the pump is in operation.</p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <p><article class="image right"><a href="images/plantmanualflow.PNG" class="image"><img src="images/plantmanualflow.PNG" alt="" /></a></article> Additionally, the manual part of the system is explained in the simple flowchart here as well. Once again, simply, when the button to turn the pump on is pressed, the pump turns on, while when the button is not pressed, the pump turns off. Like with the automated side, when the pump is in operation, a LED light on the Arduino Groveboard lights up to signal the pump is in operation.</p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <p><article class="image left"><a href="images/plantdiag.png" class="image"><img src="images/plantdiag.png" alt="" /></a></article> This project taught me basics of coding in Arduino and Java, as well as how to tinker with a Groveboard (Arduino board), how to integrate software and hardware to produce something that has usability in the real world. A more complex diagram of the overall system is provided as well. </p>
+
+
+							</section>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="https://formspree.io/f/mbjngyyk">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name*</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email*</label>
+										<input type="text" name="email" id="email" required />
+									</div>
+									<div class="field">
+										<label for="message">Message*</label>
+										<textarea name="message" id="message" rows="6" required></textarea>
+									</div>
+								</div>
+								<h6>*Required</h6>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:sidhantsv@gmail.com">sidhantsv@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon brands alt fa-linkedin-in"></span>
+									<h3>LinkedIn</h3>
+									<a href="https://www.linkedin.com/in/sidhant-vaidya-8bb506145/" target="_blank">https://www.linkedin.com/in/sidhant-vaidya/</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon brands alt fa-instagram"></span>
+									<h3>Instagram</h3>
+									<a href="https://instagram.com/sidhantvaidya" target="_blank">https://instagram.com/sidhantvaidya</a>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://instagram.com/sidhantvaidya" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/sidhantsv" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/sidhant-vaidya-8bb506145/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Sidhant Vaidya</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
